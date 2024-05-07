@@ -19,6 +19,7 @@ def sigma(n):
                 factors.append(n // i)
     return sum(factors)
 
+
 """
 For primes numbers, it's:
 slope = 2 / x  # Calculate slope
@@ -37,14 +38,17 @@ def slope_and_intercept(n):
     return [slope, intercept]
 
 
+# Extend to 1000 to see first odd abundant number at 945.
+
 # Define a function to plot lines and points based on the new specifications
-def plot_lines_and_points(start=1, end=101):
+def plot_lines_and_points(start=1, end=201):
     # Create a figure and axis for the plot
     fig, ax = plt.subplots()
 
     # Generate lines and points for each odd number from start to end
     for x in range(start, end + 1, 2):
-        # if is_prime(x):# Loop prime numbers (not sure why i can't just use odd numbers)
+        # if(is_prime(x)):
+        #     continue
 
         if x == 1:
             slope = 2
@@ -57,15 +61,15 @@ def plot_lines_and_points(start=1, end=101):
             return slope * x_value + intercept
 
         # Define x range for the line
-        x_values = np.linspace(x, 300, 1000)
+        x_values = np.linspace(x, 500, 1000)
         y_values = line_func(x_values)
 
         # Plot the line
-        ax.plot(x_values, y_values, label=f'{x}')
+        ax.plot(x_values, y_values)
 
         # Plot points at x=3*2^n for n=0 to 4 as an example
         n_values = range(16)
-        max_value = 300
+        max_value = 500
         x_points = [x * 2 ** n for n in n_values if x * 2 ** n <= max_value]
         # x_points = [x * 2 ** n for n in n_values]
         y_points = [line_func(x_point) for x_point in x_points]
