@@ -61,7 +61,7 @@ def plot_lines_and_points(start=1, end=101):
         y_values = line_func(x_values)
 
         # Plot the line
-        ax.plot(x_values, y_values, label=f'Slope=2/{x}')
+        ax.plot(x_values, y_values, label=f'{x}')
 
         # Plot points at x=3*2^n for n=0 to 4 as an example
         n_values = range(16)
