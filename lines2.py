@@ -41,7 +41,7 @@ def slope_and_intercept(n):
 # Extend to 1000 to see first odd abundant number at 945.
 
 # Define a function to plot lines and points based on the new specifications
-def plot_lines_and_points(start=1, end=201):
+def plot_lines_and_points(start=1, end=101):
     # Create a figure and axis for the plot
     fig, ax = plt.subplots()
 
@@ -57,7 +57,7 @@ def plot_lines_and_points(start=1, end=201):
             return slope * x_value + intercept
 
         # Define x range for the line
-        x_values = np.linspace(x, 500, 1000)
+        x_values = np.linspace(x, end, 1000)
         y_values = line_func(x_values)
 
         # Plot the line
@@ -65,7 +65,7 @@ def plot_lines_and_points(start=1, end=201):
 
         # Plot points at x=3*2^n for n=0 to 4 as an example
         n_values = range(16)
-        max_value = 500
+        max_value = end
         x_points = [x * 2 ** n for n in n_values if x * 2 ** n <= max_value]
         # x_points = [x * 2 ** n for n in n_values]
         y_points = [line_func(x_point) for x_point in x_points]
@@ -91,4 +91,4 @@ def plot_lines_and_points(start=1, end=201):
 
 
 # Call the function to plot the lines and points
-plot_lines_and_points()
+plot_lines_and_points(1, 101)
