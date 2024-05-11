@@ -81,7 +81,6 @@ def plot_lines_and_points(start=1, end=201):
         #         ax.text(xp, yp, f'({xp},{yp:.2f})', fontsize=8)
 
     # Customize the plot
-    ax.legend()
     ax.grid(True)
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
