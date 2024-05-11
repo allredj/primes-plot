@@ -50,11 +50,7 @@ def plot_lines_and_points(start=1, end=201):
         # if(is_prime(x)):
         #     continue
 
-        if x == 1:
-            slope = 2
-            intercept = -2
-        else:
-            [slope, intercept] = slope_and_intercept(x)
+        [slope, intercept] = slope_and_intercept(x)
 
         # Define the line function based on slope and intercept
         def line_func(x_value):
