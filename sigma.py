@@ -23,7 +23,7 @@ def main():
         print(f"sigma({i}) = {sigma(i)}")
         print(f"half_sigma({i}) = {half_sigma}")
         print(f"abundance({i}) = {sigma(i) - 2*i}")
-        print(f"slope({i}, {sigma(i) - 2*i}) = {sigma(2 * i) - 2 * i - sigma(i)}/{i}")
+        print(f"slope({i}, {sigma(i) - 2*i}) = {half_sigma}/{i}")
         print(f"-------------------")
 
 

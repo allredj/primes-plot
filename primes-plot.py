@@ -89,7 +89,7 @@ def add_square_root_circle(fig, target):
 fig = go.Figure()
 
 # Define the range of values for the slider
-values = np.arange(1, 100, 1)
+values = np.arange(1, 300, 2)
 
 # Do we also want to show a spiral for n + 2?
 show_plus_two = False
@@ -102,7 +102,7 @@ for value in values:
 fig.update_layout(
     showlegend=True,
     polar=dict(
-        radialaxis=dict(showticklabels=True, ticks='', type='log'),  # try log different base?
+        radialaxis=dict(showticklabels=True, ticks='', type='log'),  # tor linear
         angularaxis=dict(showticklabels=False, ticks='')
     )
 )
