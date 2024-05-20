@@ -47,8 +47,10 @@ def plot_lines_and_points(start=1, end=101):
 
     # Generate lines and points for each odd number from start to end
     for x in range(start, end + 1, 2):
-        # if(is_prime(x)):
-        #     continue
+        # Skip prime roots. Only display unpredictable numbers.
+        if(x == 1 or is_prime(x)):
+        # if not ( x==1 or is_prime(x)):
+            continue
 
         if (x == 1):
             [slope, intercept] = [0, -1]
@@ -94,4 +96,4 @@ def plot_lines_and_points(start=1, end=101):
 
 
 # Call the function to plot the lines and points
-plot_lines_and_points(1, 101)
+plot_lines_and_points(1, 2001)
