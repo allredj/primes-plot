@@ -14,15 +14,25 @@ def sigma(n):
                 factors.append(n // i)
     return sum(factors)
 
+
 # main function
 def main():
     # Test the sum_factors function
-    for i in range(1, 201):
+    for i in range(1, 1001, 2):
+        half_sigma = sigma(2*i) - 2*i - sigma(i)
         print(f"sigma({i}) = {sigma(i)}")
-        print(f"half_sigma({i}) = {sigma(2*i) - 2*i - sigma(i)}")
+        print(f"half_sigma({i}) = {half_sigma}")
         print(f"abundance({i}) = {sigma(i) - 2*i}")
-        print(f"slope({i}) = {sigma(2*i) - 2*i - sigma(i)}/{i}")
+        print(f"slope({i}, {sigma(i) - 2*i}) = {sigma(2 * i) - 2 * i - sigma(i)}/{i}")
         print(f"-------------------")
+
 
 if __name__ == "__main__":
     main()
+
+
+# very few sigma(n) are odd (52 of first 1000, 169 of first 10000, 538 of first 100,000)
+# Actually, it seems to be only odd for perfect squares.
+# Which makes sense, because of the symmetry around the square root circle,
+
+# half_sigma seems to be always even. because terms are all even. looks easy to show.
